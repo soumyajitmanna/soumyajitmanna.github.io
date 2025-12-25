@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hello, I'm Joonkyung Kim!"
+title: "Hello, I'm Soumyajit Manna!"
 excerpt: "About me"
 author_profile: true
 redirect_from:
@@ -16,15 +16,7 @@ redirect_from:
     <h2 style="margin: 0; color: #8B4513;">About Me</h2>
   </div>
   <div>
-    <p style="margin-top: 0;">I am a Ph.D. student in Computer Science and Engineering at Texas A&M University, advised by Prof. <a href="https://www.cs.cmu.edu/~yiweilyu/"><strong>Yiwei Lyu</strong></a>. I earned my M.S. in Electronic Engineering from Sogang University, where I worked in the <a href="https://airobotics.sogang.ac.kr/"><strong>AI Robotics Lab</strong></a> under Prof. <a href="https://sites.google.com/site/changjoonam/"><strong>Changjoo Nam</strong></a>. From Aug. 2024 to Feb. 2025, I was a Visiting Scholar at Carnegie Mellon University.</p>
-
-    <p>My research centers on decentralized multi-robot and multi-agent systems, particularly on risk-aware and uncertainty-aware safe control for heterogeneous agents. I aim to develop principled approaches for ensuring safety, robustness, and reliable decision making in interactive and dynamic environments.</p>
-
-    <p>Previously, my work focused on decentralized navigation using onboard perception modalities (e.g., 2D LiDAR, monocular cameras), addressing safety and conflict resolution in multi-robot settings.</p>
-
-    <!-- My long-term goal is to ensure safety and enable collaboration among multiple agents, facilitating their integration into complex, human-centered environments. -->
-
-    <p style="margin-bottom: 0;">If you would like to chat or connect, I'd be happy to hear from you!</p>
+    <p style="margin-top: 0;"> I am a final-year Master's student in the Department of Civil and Environmental Engineering at Texas A&M University.</p>
   </div>
 </div>
 
