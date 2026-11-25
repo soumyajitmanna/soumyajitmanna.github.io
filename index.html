@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Soumyajit Manna | Hydrology Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #1c2b3a;
+    --ink-soft:   #445566;
+    --ink-muted:  #7a8fa6;
+    --rule:       #dde4ec;
+    --bg:         #ffffff;
+    --accent:     #1d4e89;
+    --accent-lt:  #eaf1f9;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #1a3250 0%, #1d4e89 60%, #2a6099 100%);
+    padding: 3.5rem 1.5rem 2.8rem;
+    text-align: center;
+    color: #fff;
+  }
+  .avatar-ring {
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.12);
+    margin: 0 auto 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.03em;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.4rem;
+  }
+  .hero-sub {
+    font-size: 0.85rem;
+    font-weight: 300;
+    opacity: 0.82;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  .hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .hero-link {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.15s;
+  }
+  .hero-link:hover { background: rgba(255,255,255,0.15); }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    height: 46px;
+    align-items: center;
+    padding: 0 1.5rem;
+  }
+  .nav-inner a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+  .nav-inner a:hover { color: var(--accent); }
+
+  /* ── CONTENT ── */
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  section {
+    padding: 2.8rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+
+  /* ── ABOUT ── */
+  .about-text {
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 640px;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
+  .edu-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.2rem 2rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--rule);
+  }
+  .edu-item:hover { border-left-color: var(--accent); }
+  .edu-degree { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
+  .edu-inst   { font-size: 0.82rem; color: var(--ink-soft); }
+  .edu-advisor{ font-size: 0.77rem; color: var(--ink-muted); margin-top: 0.1rem; }
+  .edu-advisor a { color: var(--accent); text-decoration: none; }
+  .edu-advisor a:hover { text-decoration: underline; }
+  .edu-year   { font-size: 0.77rem; color: var(--ink-muted); white-space: nowrap; padding-top: 0.1rem; }
+
+  /* ── POSTERS ── */
+  .poster-list { display: flex; flex-direction: column; gap: 1.2rem; }
+  .poster-item {
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+    background: #fafcff;
+  }
+  .poster-date {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+  }
+  .poster-title {
+    font-family: 'Merriweather', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+  .poster-sub {
+    font-size: 0.83rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .poster-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem;
+  }
+  .tag {
+    font-size: 0.69rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    background: var(--accent-lt);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .pdf-link {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    margin-top: 0.75rem;
+    font-size: 0.77rem; font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 0.25rem 0.65rem; border-radius: 4px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .pdf-link:hover { background: var(--accent); color: #fff; }
+
+  /* ── CONTACT ── */
+  .contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .contact-list li {
+    display: flex; align-items: baseline; gap: 0.7rem;
+    font-size: 0.85rem;
+  }
+  .c-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+  .c-val { color: var(--ink-soft); }
+  .c-val a { color: var(--accent); text-decoration: none; }
+  .c-val a:hover { text-decoration: underline; }
+  .email-group { display: flex; flex-direction: column; gap: 0.15rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+  }
+
+  /* ── MOBILE FIRST ── */
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+
+    .hero { padding: 2.5rem 1.2rem 2rem; }
+    .avatar-ring { width: 80px; height: 80px; font-size: 1.6rem; }
+    .hero h1 { font-size: 1.5rem; }
+    .hero-sub { font-size: 0.82rem; }
+    .hero-links { gap: 0.5rem; }
+    .hero-link {
+      padding: 0.45rem 1rem;
+      font-size: 0.78rem;
+      min-height: 36px;
+      display: inline-flex; align-items: center;
+    }
+
+    .nav-inner {
+      gap: 0;
+      justify-content: space-around;
+      padding: 0 0.5rem;
+      height: 44px;
+    }
+    .nav-inner a {
+      font-size: 0.75rem;
+      padding: 0 0.3rem;
+      min-height: 44px;
+      display: inline-flex; align-items: center;
+    }
+
+    .content { padding: 0 1rem; }
+    section { padding: 2rem 0; }
+
+    .edu-item { grid-template-columns: 1fr; gap: 0.15rem; }
+    .edu-year { display: none; }
+
+    .poster-item { padding: 1rem 1rem; }
+
+    .contact-list li { flex-direction: column; gap: 0.2rem; }
+    .c-label { min-width: unset; }
+
+    .pdf-link { min-height: 36px; }
+  }
+
+  @media (max-width: 360px) {
+    .nav-inner a { font-size: 0.68rem; }
+    .hero h1 { font-size: 1.3rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="avatar-ring">SM</div>
+  <h1>Soumyajit Manna</h1>
+  <p class="hero-sub">PhD Student, University of Alabama<br>Hydrology &amp; Water Resources</p>
+  <div class="hero-links">
+    <a class="hero-link" href="mailto:smanna@crimson.ua.edu">Email</a>
+    <a class="hero-link" href="https://www.linkedin.com/in/soumyajitmanna01/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="hero-link" href="https://scholar.google.com/citations?user=vSMCTCIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#posters">AGU Posters</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="content">
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <p class="about-text">
+      Soumyajit Manna is a PhD student at the University of Alabama, where he investigates hydrological drought and low flow dynamics across the contiguous United States. His academic journey spans IIT Bhubaneswar, Texas A&amp;M University, and now Alabama — working to understand and uncover how low flow and drought processes emerge from catchment-scale hydrology and manifest at large scales, with direct implications for water resources.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="edu-list">
+      <li class="edu-item">
+        <div>
+          <div class="edu-degree">PhD in Civil &amp; Environmental Engineering <span style="font-weight:400;color:var(--ink-muted)">(ongoing)</span></div>
+          <div class="edu-inst">University of Alabama, Tuscaloosa</div>
+          <!--<div class="edu-advisor">Advisor: <a href="https://scholar.google.com/citations?user=oYVbtDUAAAAJ&hl=en" target="_blank" rel="noopener">Dr. Peishi Jiang</a></div>-->
+        </div>
+        <div class="edu-year">Present</div>
+      </li>
+      <li class="edu-item">
+        <div>
+          <div class="edu-degree">Master of Science</div>
+          <div class="edu-inst">Texas A&amp;M University, College Station</div>
+          <!--<div class="edu-advisor">Guide: <a href="https://scholar.google.com/citations?user=Xq6iWHUAAAAJ&hl=en" target="_blank" rel="noopener">Dr. Ashok Mishra</a> &nbsp;·&nbsp; <a href="https://mishra.engr.tamu.edu/people/" target="_blank" rel="noopener">CEWS Lab</a></div>-->
+        </div>
+        <div class="edu-year"></div>
+      </li>
+      <li class="edu-item">
+        <div>
+          <div class="edu-degree">B.Tech</div>
+          <div class="edu-inst">Indian Institute of Technology Bhubaneswar</div>
+        </div>
+        <div class="edu-year"></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- POSTERS -->
+  <section id="posters">
+    <h2>AGU Posters — Fall Meeting 2026</h2>
+    <div class="poster-list">
+
+      <div class="poster-item">
+        <div class="poster-date">December 9 &nbsp;·&nbsp; Session X</div>
+        <div class="poster-title">Physics-guided Framework</div>
+        <div class="poster-sub">Can loss function design improve long-lead prediction of extremes?</div>
+        <div class="poster-tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Extremes</span>
+          <span class="tag">Prediction</span>
+        </div>
+        <!-- <a class="pdf-link" href="poster1.pdf" target="_blank">↓ Download PDF</a> -->
+      </div>
+
+      <div class="poster-item">
+        <div class="poster-date">December 10 &nbsp;·&nbsp; Session Y</div>
+        <div class="poster-title">Low-flow Mechanisms</div>
+        <div class="poster-sub">Which factors impact low flow across CONUS?</div>
+        <div class="poster-tags">
+          <span class="tag">Low Flow</span>
+          <span class="tag">Drought</span>
+          <span class="tag">CONUS</span>
+        </div>
+        <!-- <a class="pdf-link" href="poster2.pdf" target="_blank">↓ Download PDF</a> -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li>
+        <span class="c-label">Email</span>
+        <span class="c-val">
+          <div class="email-group">
+            <a href="mailto:smanna@crimson.ua.edu">smanna@crimson.ua.edu</a>
+            <a href="mailto:soumyajit06@tamu.edu">soumyajit06@tamu.edu</a>
+            <a href="mailto:sm88@iitbbs.ac.in">sm88@iitbbs.ac.in</a>
+          </div>
+        </span>
+      </li>
+      <li>
+        <span class="c-label">LinkedIn</span>
+        <span class="c-val"><a href="https://www.linkedin.com/in/soumyajitmanna01/" target="_blank" rel="noopener">soumyajitmanna01</a></span>
+      </li>
+      <li>
+        <span class="c-label">Google Scholar</span>
+        <span class="c-val"><a href="https://scholar.google.com/citations?user=vSMCTCIAAAAJ&hl=en" target="_blank" rel="noopener">View profile</a></span>
+      </li>
+      <li>
+        <span class="c-label">ResearchGate</span>
+        <span class="c-val" style="color:var(--ink-muted);font-style:italic;font-size:0.8rem;">Coming soon</span>
+      </li>
+      <li>
+        <span class="c-label">ORCID</span>
+        <span class="c-val" style="color:var(--ink-muted);font-style:italic;font-size:0.8rem;">Coming soon</span>
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+<footer></footer>
+
+</body>
+</html>
